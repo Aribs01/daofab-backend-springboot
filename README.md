@@ -1,7 +1,7 @@
 ### Java Springboot Project
 Simple REST Project for returning table data
 
-## Steps
+## Steps To Run Project
 1. Pull project from repository
 2. Open project in your prefered IDE (I used IntelliJ)
 3. Install dependency
