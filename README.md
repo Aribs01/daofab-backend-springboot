@@ -1,5 +1,5 @@
 ### Java Springboot Project (Maven)
-Simple REST Project for returning table data
+Simple REST Project for returning table data from a JSON File
 
 ## Steps To Run Project
 1. Pull project from repository
