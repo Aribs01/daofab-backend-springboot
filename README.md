@@ -1,4 +1,4 @@
-### Java Springboot Project
+### Java Springboot Project (Maven)
 Simple REST Project for returning table data
 
 ## Steps To Run Project
