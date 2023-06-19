@@ -1,6 +1,7 @@
 package com.example.daofabbackend.dao;
 
 import com.example.daofabbackend.model.Parent;
+import com.example.daofabbackend.model.ParentData;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Repository;
@@ -48,6 +49,15 @@ public class ParentDataAccessService implements ParentDao {
         }
 
         return Collections.emptyList();
+    }
+
+    @Override
+    public Optional<ParentData> selectAllParentData(int pageNumber, int pageSize) {
+        var parentData = new ParentData(
+                selectAllParent(pageNumber, pageSize),
+                selectAllParent(-1, -1).size()
+        );
+        return Optional.of(parentData);
     }
 
     @Override

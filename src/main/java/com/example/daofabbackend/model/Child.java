@@ -2,19 +2,23 @@ package com.example.daofabbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.math.BigDecimal;
+import java.util.Optional;
 
 public class Child {
     private final int id;
     private final int parentId;
-    private final BigDecimal paidAmount;
+    private final int paidAmount;
+
+    private Parent parent;
 
     public Child(@JsonProperty("id") int id,
                   @JsonProperty("parentId") int parentId,
-                  @JsonProperty("paidAmount") BigDecimal paidAmount) {
+                  @JsonProperty("paidAmount") int paidAmount,
+                 @JsonProperty("parent") Parent parent) {
         this.id = id;
         this.parentId = parentId;
         this.paidAmount = paidAmount;
+        this.parent = parent;
     }
 
     public int getId() {
@@ -25,7 +29,15 @@ public class Child {
         return parentId;
     }
 
-    public BigDecimal getPaidAmount() {
+    public int getPaidAmount() {
         return paidAmount;
+    }
+
+    public Parent parent() {
+        return parent;
+    }
+
+    public void setParent(Optional<Parent> parent) {
+        this.parent = parent.orElse(null);
     }
 }

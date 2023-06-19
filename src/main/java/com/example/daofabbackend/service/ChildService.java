@@ -26,7 +26,7 @@ public class ChildService {
         return childDao.selectChildById(id);
     }
 
-    public Optional<Child> getChildByParentId(int id) {
+    public List<Child> getChildByParentId(int id) {
         return childDao.selectChildByParentId(id);
     }
 }

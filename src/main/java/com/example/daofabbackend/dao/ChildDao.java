@@ -11,5 +11,5 @@ public interface ChildDao {
 
     Optional<Child> selectChildById(int id);
 
-    Optional<Child> selectChildByParentId(int id);
+    List<Child> selectChildByParentId(int id);
 }

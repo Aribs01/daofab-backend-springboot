@@ -8,12 +8,12 @@ public class Parent {
     private final int id;
     private final String sender;
     private final String receiver;
-    private final BigDecimal totalAmount;
+    private final int totalAmount;
 
     public Parent(@JsonProperty("id") int id,
                   @JsonProperty("sender") String sender,
                   @JsonProperty("receiver") String receiver,
-                  @JsonProperty("totalAmount") BigDecimal totalAmount) {
+                  @JsonProperty("totalAmount") int totalAmount) {
         this.id = id;
         this.sender = sender;
         this.receiver = receiver;
@@ -32,7 +32,7 @@ public class Parent {
         return receiver;
     }
 
-    public BigDecimal getTotalAmount() {
+    public int getTotalAmount() {
         return totalAmount;
     }
 }

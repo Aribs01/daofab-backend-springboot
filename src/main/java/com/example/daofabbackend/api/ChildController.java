@@ -3,14 +3,12 @@ package com.example.daofabbackend.api;
 import com.example.daofabbackend.model.Child;
 import com.example.daofabbackend.service.ChildService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RequestMapping("api/v1/child")
 @RestController
 public class ChildController {
@@ -34,8 +32,8 @@ public class ChildController {
     }
 
     @GetMapping(path = "getChildrenByParentId/{parentId}")
-    public Optional<Child> getChildByParentId(@PathVariable("parentId") int parentId) {
-        Optional<Child> childByParentId = childService.getChildByParentId(parentId);
+    public List<Child> getChildByParentId(@PathVariable("parentId") int parentId) {
+        List<Child> childByParentId = childService.getChildByParentId(parentId);
         return childByParentId;
     }
 }

@@ -2,6 +2,7 @@ package com.example.daofabbackend.service;
 
 import com.example.daofabbackend.dao.ParentDao;
 import com.example.daofabbackend.model.Parent;
+import com.example.daofabbackend.model.ParentData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class ParentService {
 
     public List<Parent> getAllParent(int pageNumber, int pageSize) {
         return parentDao.selectAllParent(pageNumber, pageSize);
+    }
+
+    public Optional<ParentData> getAllParentData(int pageNumber, int pageSize) {
+        return parentDao.selectAllParentData(pageNumber, pageSize);
     }
 
     public Optional<Parent> getParentById(int id) {
