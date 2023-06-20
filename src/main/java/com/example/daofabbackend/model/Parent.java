@@ -10,6 +10,10 @@ public class Parent {
     private final String receiver;
     private final int totalAmount;
 
+    @Override
+    public String toString() {
+        return "Parent [id=" + id + ", sender=" + sender + ", receiver=" + receiver + ", totalAmount=" + totalAmount + "]";
+    }
     public Parent(@JsonProperty("id") int id,
                   @JsonProperty("sender") String sender,
                   @JsonProperty("receiver") String receiver,

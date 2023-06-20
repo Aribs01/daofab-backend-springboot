@@ -1,5 +1,7 @@
 package com.example.daofabbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Optional;
@@ -8,7 +10,7 @@ public class Child {
     private final int id;
     private final int parentId;
     private final int paidAmount;
-
+    @JsonProperty
     private Parent parent;
 
     public Child(@JsonProperty("id") int id,
@@ -37,7 +39,7 @@ public class Child {
         return parent;
     }
 
-    public void setParent(Optional<Parent> parent) {
-        this.parent = parent.orElse(null);
+    public void setParent(Parent parent) {
+        this.parent = parent;
     }
 }

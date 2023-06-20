@@ -32,7 +32,7 @@ public class ChildController {
     }
 
     @GetMapping(path = "getChildrenByParentId/{parentId}")
-    public List<Child> getChildByParentId(@PathVariable("parentId") int parentId) {
+    public List<Child> getChildByParentIds(@PathVariable("parentId") int parentId) {
         List<Child> childByParentId = childService.getChildByParentId(parentId);
         return childByParentId;
     }

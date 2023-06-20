@@ -56,8 +56,6 @@ public class ChildDataAccessService implements ChildDao{
 
     @Override
     public List<Child> selectChildByParentId(int id) {
-//        Parent parent = new Parent(2, "PPP", "PAPA", 1000);
-
         Optional<Parent> parent = parentDao.selectParentById(id);
 
         List<Child> allChildren = selectAllChild();
@@ -65,8 +63,7 @@ public class ChildDataAccessService implements ChildDao{
                 .collect(Collectors.toList());
 
         for (Child child : filteredChildren) {
-//            child.setParent(Optional.of(parent));
-            child.setParent(parent);
+            child.setParent(parent.orElse(null));
         }
 
         return filteredChildren;
